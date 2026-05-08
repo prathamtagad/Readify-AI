@@ -47,10 +47,8 @@ cd <project-folder>
 ### 2. Install dependencies
 
 ```bash
-pip install streamlit azure-cognitiveservices-vision-computervision azure-cognitiveservices-speech python-dotenv msrest
+pip install -r requirements.txt
 ```
-
-Or if you prefer, throw them in a `requirements.txt` and run `pip install -r requirements.txt`.
 
 ### 3. Set up your Azure keys
 
@@ -120,6 +118,24 @@ It's a single-file project on purpose. Keeps things simple and easy to hand off 
 
 **Speech synthesis fails or gets canceled?**
 → Usually a quota or region issue on the Azure side. Verify your Speech resource is active and the region in `.env` matches the one you created the resource in.
+
+---
+
+## Deployment
+
+The easiest way to deploy **Readify AI** is using **Streamlit Community Cloud**:
+
+1.  Push your code to a GitHub repository.
+2.  Go to [share.streamlit.io](https://share.streamlit.io/) and connect your account.
+3.  Click **"New app"** and select your repo/branch.
+4.  **Important**: Before clicking Deploy, go to **Advanced Settings** -> **Secrets** and paste your Azure credentials there:
+    ```toml
+    VISION_KEY = "your_key"
+    VISION_ENDPOINT = "your_endpoint"
+    SPEECH_KEY = "your_key"
+    SPEECH_REGION = "your_region"
+    ```
+5.  Click **Deploy**!
 
 ---
 
