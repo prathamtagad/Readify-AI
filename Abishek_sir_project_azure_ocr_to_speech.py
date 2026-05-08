@@ -141,6 +141,7 @@ st.markdown(
     [data-testid="stDecoration"] {display: none;}
     #MainMenu {visibility: hidden;}
     footer {visibility: hidden;}
+    a[href="https://streamlit.io/cloud"] {display: none !important;}
 
     /* App background */
     .stApp {
