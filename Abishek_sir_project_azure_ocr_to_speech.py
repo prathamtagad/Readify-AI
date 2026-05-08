@@ -26,7 +26,7 @@ SPEECH_KEY = os.getenv("SPEECH_KEY")
 SPEECH_REGION = os.getenv("SPEECH_REGION", "eastus")
 
 st.set_page_config(
-    page_title="OCR → Voice",
+    page_title="Readify AI",
     page_icon="🎙️",
     layout="wide",
     initial_sidebar_state="collapsed",
@@ -390,7 +390,7 @@ st.markdown(
 # =========================================================
 
 st.markdown("<div class='hero-badge'>🧠 Azure OCR · 🎙️ Text to Speech</div>", unsafe_allow_html=True)
-st.markdown("<div class='hero-title'>OCR → Voice</div>", unsafe_allow_html=True)
+st.markdown("<div class='hero-title'>Readify AI</div>", unsafe_allow_html=True)
 st.markdown(
     "<div class='hero-subtitle'>Upload an image, extract the text, and turn it into clean speech with a polished one-screen workflow.</div>",
     unsafe_allow_html=True,
