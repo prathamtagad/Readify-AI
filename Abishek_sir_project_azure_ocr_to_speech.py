@@ -141,7 +141,42 @@ st.markdown(
     [data-testid="stDecoration"] {display: none;}
     #MainMenu {visibility: hidden;}
     footer {visibility: hidden;}
-    a[href="https://streamlit.io/cloud"] {display: none !important;}
+
+    /* Nuke the Streamlit Cloud badge */
+    a[href="https://streamlit.io/cloud"],
+    a[href*="streamlit.io/cloud"],
+    [class*="viewerBadge"],
+    [class*="stBadge"],
+    div[class*="gzau3"],
+    div[class*="nim44"] {
+        display: none !important;
+        visibility: hidden !important;
+        height: 0 !important;
+        width: 0 !important;
+        overflow: hidden !important;
+        position: absolute !important;
+        z-index: -9999 !important;
+    }
+    </style>
+
+    <script>
+    // Remove Streamlit Cloud badge on load and whenever it gets re-injected
+    function removeStreamlitBadge() {
+        const badges = document.querySelectorAll(
+            'a[href*="streamlit.io/cloud"], [class*="viewerBadge"], [class*="stBadge"]'
+        );
+        badges.forEach(el => el.remove());
+    }
+
+    // Run immediately
+    removeStreamlitBadge();
+
+    // Watch for dynamic injection
+    const observer = new MutationObserver(() => removeStreamlitBadge());
+    observer.observe(document.body, { childList: true, subtree: true });
+    </script>
+
+    <style>
 
     /* App background */
     .stApp {
