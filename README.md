@@ -40,8 +40,8 @@ That's it. No accounts to create inside the app, no complicated steps.
 ### 1. Clone or download this repo
 
 ```bash
-git clone <your-repo-url>
-cd <project-folder>
+git clone https://github.com/prathamtagad/Readify-AI.git
+cd Readify-AI
 ```
 
 ### 2. Install dependencies
